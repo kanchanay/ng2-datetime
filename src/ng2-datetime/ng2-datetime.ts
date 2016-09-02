@@ -5,6 +5,9 @@ import {
 import {ControlValueAccessor, NgControl} from '@angular/forms';
 import {TimepickerEvent} from './timepicker-event-interface';
 
+declare var jQuery:any
+declare var $:any
+
 @Component({
     selector: 'datetime',
     template: `
@@ -20,7 +23,7 @@ import {TimepickerEvent} from './timepicker-event-interface';
             </div>
         </div>
         <div class="input-group bootstrap-timepicker timepicker">
-            <input id="{{idTimePicker}}" type="text" class="form-control input-small" 
+            <input id="{{idTimePicker}}" type="text" class="form-control input-small"
                    [attr.readonly]="readonly"
                    [attr.placeholder]="timepickerOptions.placeholder || 'Set time'"
                    [(ngModel)]="timeModel"
